@@ -10,7 +10,8 @@
     "prettier": "npx prettier --write src",
     "generate-component": "npx generate-react-cli component",
     "generate-view": "npx generate-react-cli component --type=view",
-    "generate-typography": "npx generate-react-cli component --type=typography"
+    "generate-typography": "npx generate-react-cli component --type=typography",
+    "build-github-pages": "tsc && vite build --base=/ts-js-functions/"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
