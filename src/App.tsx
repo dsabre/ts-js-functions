@@ -21,7 +21,7 @@ const App = () => {
                     <main className='container mx-auto p-4 h-screen overflow-y-auto'>
                         <Routes>
                             <Route path='*' element={<NotFound />} />
-                            <Route path='/' element={<Homepage />} />
+                            <Route path='' element={<Homepage />} />
 
                             {routes.map((route: any, key: number) => (
                                 <Route path={route.path} element={route.element} key={key} />

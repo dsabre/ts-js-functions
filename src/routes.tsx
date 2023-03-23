@@ -2,7 +2,7 @@ import FunctionView from './views/FunctionView';
 
 const routes = [
     {
-        path: '/ucfirst',
+        path: 'ucfirst',
         element: (
             <FunctionView
                 description='Capitalize the first letter of a string.'
@@ -12,7 +12,7 @@ const routes = [
         )
     },
     {
-        path: '/ifNaN',
+        path: 'ifNaN',
         element: (
             <FunctionView
                 description='Is a utility function that takes two arguments - number and defaultRet. It checks whether the given number is NaN (Not a Number) or not, and returns defaultRet if the number is indeed NaN.'
@@ -31,7 +31,7 @@ const result3 = ifNaN(myNaN, 10); // returns 10
         )
     },
     {
-        path: '/getElementHeight',
+        path: 'getElementHeight',
         element: (
             <FunctionView
                 description={`Get the height in pixel of a given query selector.<br><span class="underline">Pay attention:</span> the selector must point to only one DOM element, otherwise the function will return the height of the first matching element.`}
@@ -69,7 +69,7 @@ const result3 = ifNaN(myNaN, 10); // returns 10
         )
     },
     {
-        path: '/getObjectFromFormData',
+        path: 'getObjectFromFormData',
         element: (
             <FunctionView
                 description='Return an object from a submitted form data.'
@@ -87,7 +87,7 @@ const result3 = ifNaN(myNaN, 10); // returns 10
         )
     },
     {
-        path: '/downloadFile',
+        path: 'downloadFile',
         element: (
             <FunctionView
                 description='Is a utility function that takes two arguments - filename and content. It creates a new &amp;lt;a&amp;gt; element, sets its href attribute to a data URL that contains the given content as plain text, and sets its download attribute to the given filename. It then adds this element to the DOM, triggers a click on the element to download the file, and finally removes the element from the DOM.'
@@ -126,7 +126,7 @@ downloadFile(myFilename, myText);
         )
     },
     {
-        path: '/makeId',
+        path: 'makeId',
         element: (
             <FunctionView
                 description='Generate and return a random string of a given length.'
@@ -152,7 +152,7 @@ downloadFile(myFilename, myText);
         )
     },
     {
-        path: '/getClonedObject',
+        path: 'getClonedObject',
         element: (
             <FunctionView
                 description='It creates a new object or array by cloning the given object using the JSON stringify and parse methods.'
@@ -162,7 +162,7 @@ downloadFile(myFilename, myText);
         )
     },
     {
-        path: '/stripTags',
+        path: 'stripTags',
         element: (
             <FunctionView
                 description='Is a utility function that takes one argument - html. It creates a new &amp;lt;div&amp;gt; element, sets its innerHTML property to the given html, and returns the text content of the element, without any HTML tags.'
