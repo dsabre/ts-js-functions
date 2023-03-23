@@ -15,7 +15,7 @@ const routes = [
         path: '/ifNaN',
         element: (
             <FunctionView
-                description='Is a utility function that takes two arguments - number and defaultRet. It checks whether the given number is NaN (Not a Number) or not, and returns defaultRet if the number is indeed NaN.'
+                description='Function that takes two arguments - number and defaultRet. It checks whether the given number is NaN (Not a Number) or not, and returns defaultRet if the number is indeed NaN.'
                 functionCodeTs='(number: number, defaultRet: number = 0): number => isNaN(number) ? defaultRet : number;'
                 functionCodeJs='(number, defaultRet = 0) => isNaN(number) ? defaultRet : number;'
                 example={`import { ifNaN } from './ifNaN';
@@ -90,7 +90,7 @@ const result3 = ifNaN(myNaN, 10); // returns 10
         path: '/downloadFile',
         element: (
             <FunctionView
-                description='Is a utility function that takes two arguments - filename and content. It creates a new &amp;lt;a&amp;gt; element, sets its href attribute to a data URL that contains the given content as plain text, and sets its download attribute to the given filename. It then adds this element to the DOM, triggers a click on the element to download the file, and finally removes the element from the DOM.'
+                description='Function that takes two arguments - filename and content. It creates a new &amp;lt;a&amp;gt; element, sets its href attribute to a data URL that contains the given content as plain text, and sets its download attribute to the given filename. It then adds this element to the DOM, triggers a click on the element to download the file, and finally removes the element from the DOM.'
                 functionCodeTs={`(filename: string, content: string): void => {
     const element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
@@ -165,7 +165,7 @@ downloadFile(myFilename, myText);
         path: '/stripTags',
         element: (
             <FunctionView
-                description='Is a utility function that takes one argument - html. It creates a new &amp;lt;div&amp;gt; element, sets its innerHTML property to the given html, and returns the text content of the element, without any HTML tags.'
+                description='Function that takes one argument - html. It creates a new &amp;lt;div&amp;gt; element, sets its innerHTML property to the given html, and returns the text content of the element, without any HTML tags.'
                 functionCodeTs={`(html: string): string => {
     const element = document.createElement('div');
     
