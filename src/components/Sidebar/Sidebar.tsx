@@ -11,16 +11,7 @@ interface SidebarProps {
 }
 
 const Sidebar: FC<SidebarProps> = ({onLinkClick}) => {
-    const [allFunctionsContent, setAllFunctionsContent] = useState<string>('');
     const [search, setSearch] = useState<string>('');
-
-    useEffect(() => {
-        const fileContent = routes
-            .map((l) => `const ${l.path.split('/').reverse()[0].trim()} = ${l.element.props.functionCode}`)
-            .join('\n\n');
-
-        setAllFunctionsContent(fileContent);
-    }, []);
 
     return (
         <aside className='space-y-4 flex flex-col w-72 h-screen px-4 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700'>
@@ -62,13 +53,6 @@ const Sidebar: FC<SidebarProps> = ({onLinkClick}) => {
                         ))}
 
                     <hr className='border-gray-200 dark:border-gray-600' />
-
-                    <Download
-                        filename='functions.ts'
-                        content={allFunctionsContent}
-                        label='Download all functions'
-                        className='w-full'
-                    />
                 </nav>
 
                 <a href='https://github.com/dsabre' target='_blank' className='flex items-center px-4 -mx-2'>
