@@ -7,10 +7,12 @@ import routes from './routes';
 import Homepage from './views/Homepage';
 import NotFound from './views/NotFound';
 
+const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
 const App = () => {
     return (
         <div>
-            <BrowserRouter>
+            <BrowserRouter basename={!isLocal ? '/ts-js-functions/' : undefined}>
                 <Navbar />
 
                 <div className='flex'>
