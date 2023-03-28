@@ -69,18 +69,24 @@ const result3 = ifNaN(myNaN, 10); // returns 10
         )
     },
     {
-        path: '/getObjectFromFormData',
+        path: '/getFormData',
         element: (
             <FunctionView
                 description='Return an object from a submitted form data.'
-                functionCodeTs={`(formData: any[]): object => {
-    const object: any = {};
-    formData.forEach((value: any, key: number) => object[key] = value);
+                functionCodeTs={`(event: Event) => {
+    const formData = new FormData(event.target as HTMLFormElement);
+    const object: {[key: string]: unknown} = {};
+
+    formData.forEach((value: unknown, key: string) => object[key] = value);
+
     return object;
 };`}
-                functionCodeJs={`(formData) => {
-    const object = {};
+                functionCodeJs={`(event) => {
+    const formData = new FormData(event.target);
+    const object   = {};
+
     formData.forEach((value, key) => object[key] = value);
+
     return object;
 };`}
             />
