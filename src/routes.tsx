@@ -73,13 +73,13 @@ const result3 = ifNaN(myNaN, 10); // returns 10
         element: (
             <FunctionView
                 description='Return an object from a submitted form data.'
-                functionCodeTs={`(event: Event) => {
+                functionCodeTs={`<T>(event: Event): T => {
     const formData = new FormData(event.target as HTMLFormElement);
     const object: {[key: string]: unknown} = {};
 
     formData.forEach((value: unknown, key: string) => object[key] = value);
 
-    return object;
+    return object as T;
 };`}
                 functionCodeJs={`(event) => {
     const formData = new FormData(event.target);
