@@ -93,6 +93,24 @@ const result3 = ifNaN(myNaN, 10); // returns 10
         )
     },
     {
+        path: '/padLeft',
+        element: (
+            <FunctionView
+                description='Left pad a string to a certain length with another string.'
+                functionCodeTs={`const padLeft = (value: unknown, strLength: number, chr: string = '0'): string => {
+    const val = String(value);
+    const len = strLength - val.length;
+    return len > 0 ? chr.repeat(len) + val : val;
+};`}
+                functionCodeJs={`const padLeft = (value, strLength, chr) => {
+    const val = value + '';
+    const len = strLength - val.length;
+    return len > 0 ? chr.repeat(len) + val : val;
+};`}
+            />
+        )
+    },
+    {
         path: '/downloadFile',
         element: (
             <FunctionView
