@@ -7,7 +7,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "gen-view": "npx @dsabre/generate-vue-cli@latest --dir=src/views --suffix=View",
-    "gen-component": "npx @dsabre/generate-vue-cli@latest --dir=src/components"
+    "gen-component": "npx @dsabre/generate-vue-cli@latest --dir=src/components",
+    "gen-func": "npx @dsabre/generate-vue-cli@latest --dir=src/components/functions"
   },
   "dependencies": {
     "flowbite": "^2.0.0",

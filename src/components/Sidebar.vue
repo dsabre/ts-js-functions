@@ -1,17 +1,12 @@
 <script setup>
-import { RouterLink } from 'vue-router';
+import {RouterLink} from 'vue-router';
+import {ref} from 'vue';
+import functionsList from '@/utils/functionsList';
 
-const functions = [
-    {name: 'ucfirst', path: '#'},
-    {name: 'ifNaN', path: '#'},
-    {name: 'getElementHeight', path: '#'},
-    {name: 'getFormData', path: '#'},
-    {name: 'padLeft', path: '#'},
-    {name: 'downloadFile', path: '#'},
-    {name: 'makeId', path: '#'},
-    {name: 'getClonedObject', path: '#'},
-    {name: 'stripTags', path: '#'}
-];
+const functions = ref([]);
+
+functionsList.forEach((fName) => functions.value.push({name: fName, path: `/f/${fName}`}));
+functions.value.sort((a, b) => a.name.localeCompare(b.name));
 </script>
 
 <template>
@@ -78,7 +73,7 @@ const functions = [
                     <input
                         type="search"
                         id="simple-search"
-                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                         placeholder="Search function"
                         required=""
                     />
