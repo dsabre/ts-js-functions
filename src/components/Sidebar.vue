@@ -117,5 +117,30 @@ watch(search, () => {
                 </li>
             </ul>
         </div>
+        <div
+            class="absolute bottom-0 left-0 justify-center p-4 w-full z-20"
+        >
+            <a
+                href="https://github.com/dsabre"
+                target="_blank"
+                class="flex justify-between items-center p-2 my-4 w-full rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700"
+            >
+                <span class="sr-only">Show GitHub profile</span>
+                <div class="flex items-center space-x-3">
+                    <img
+                        src="https://github.com/dsabre.png"
+                        class="w-8 h-8 rounded-full"
+                        alt="Bonnie avatar"
+                    />
+                    <div class="text-left">
+                        <div
+                            class="font-semibold leading-none text-gray-900 dark:text-white mb-0.5"
+                        >
+                            Daniele Sabre
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
     </aside>
 </template>
