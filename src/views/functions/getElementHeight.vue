@@ -9,20 +9,45 @@ import FunctionCode from '@/components/FunctionCode.vue';
         <div>
             <h2>Description</h2>
             <p class="text-gray-900 dark:text-white">
-                Description
+                Get the height in pixel of a given query selector.<br>
+                <u>Pay attention:</u> the selector must point to only one DOM element, otherwise the function will return the height of the first matching element.
             </p>
         </div>
 
         <FunctionCode title="Typescript">
-            Typescript code
+            const getElementHeight = (querySelector: string): number => {
+                const el: HTMLElement | null = document.querySelector(querySelector);
+
+                if(!el){
+                    return 0;
+                }
+
+                let elHeight = el.offsetHeight;
+                
+                ['margin-top', 'margin-bottom', 'padding-top', 'padding-bottom'].forEach(property => {
+                    elHeight += parseInt(window.getComputedStyle(el).getPropertyValue(property));
+                });
+                
+                return elHeight;
+            };
         </FunctionCode>
 
         <FunctionCode title="Javascript">
-            Javascript code
-        </FunctionCode>
+            const getElementHeight = (querySelector) => {
+                const el = document.querySelector(querySelector);
 
-        <FunctionCode title="Example">
-            Example code
+                if(!el){
+                    return 0;
+                }
+
+                let elHeight = el.offsetHeight;
+                
+                ['margin-top', 'margin-bottom', 'padding-top', 'padding-bottom'].forEach(property => {
+                    elHeight += parseInt(window.getComputedStyle(el).getPropertyValue(property));
+                });
+                
+                return elHeight;
+            };
         </FunctionCode>
     </div>
 </template>

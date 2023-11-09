@@ -9,20 +9,16 @@ import FunctionCode from '@/components/FunctionCode.vue';
         <div>
             <h2>Description</h2>
             <p class="text-gray-900 dark:text-white">
-                Description
+                Capitalize the first letter of a string.
             </p>
         </div>
 
         <FunctionCode title="Typescript">
-            Typescript code
+            const ucfirst = (string: string): string => string.charAt(0).toUpperCase() + string.slice(1);
         </FunctionCode>
 
         <FunctionCode title="Javascript">
-            Javascript code
-        </FunctionCode>
-
-        <FunctionCode title="Example">
-            Example code
+            const ucfirst = (string) => string.charAt(0).toUpperCase() + string.slice(1);
         </FunctionCode>
     </div>
 </template>

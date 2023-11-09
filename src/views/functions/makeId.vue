@@ -9,20 +9,32 @@ import FunctionCode from '@/components/FunctionCode.vue';
         <div>
             <h2>Description</h2>
             <p class="text-gray-900 dark:text-white">
-                Description
+                Generate and return a random string of a given length.
             </p>
         </div>
 
         <FunctionCode title="Typescript">
-            Typescript code
+            const makeId = (length: number): string => {
+                let result = '';
+                const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                const charactersLength = characters.length;
+                for (let i = 0; i &lt; length; i++) {
+                    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+                }
+                return result;
+            };
         </FunctionCode>
 
         <FunctionCode title="Javascript">
-            Javascript code
-        </FunctionCode>
-
-        <FunctionCode title="Example">
-            Example code
+            const makeId = (length) => {
+                let result = '';
+                const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                const charactersLength = characters.length;
+                for (let i = 0; i &lt; length; i++) {
+                    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+                }
+                return result;
+            };
         </FunctionCode>
     </div>
 </template>
