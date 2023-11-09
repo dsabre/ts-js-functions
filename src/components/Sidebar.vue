@@ -1,12 +1,27 @@
 <script setup>
 import {RouterLink} from 'vue-router';
-import {ref} from 'vue';
+import {ref, watch} from 'vue';
 import functionsList from '@/utils/functionsList';
 
 const functions = ref([]);
+const functionsFilter = ref([]);
+const search = ref('');
+const getClonedObject = (object) => JSON.parse(JSON.stringify(object));
 
-functionsList.forEach((fName) => functions.value.push({name: fName, path: `/f/${fName}`}));
+functionsList.forEach((fName) => {
+    functions.value.push({name: fName, path: `/f/${fName}`});
+    functionsFilter.value.push({name: fName, path: `/f/${fName}`});
+});
 functions.value.sort((a, b) => a.name.localeCompare(b.name));
+functionsFilter.value.sort((a, b) => a.name.localeCompare(b.name));
+
+watch(search, () => {
+    if (search.value.trim() === '') {
+        functionsFilter.value = getClonedObject(functions.value);
+    } else {
+        functionsFilter.value = getClonedObject(functions.value.filter((f) => f.name.includes(search.value.trim())));
+    }
+});
 </script>
 
 <template>
@@ -76,11 +91,12 @@ functions.value.sort((a, b) => a.name.localeCompare(b.name));
                         class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                         placeholder="Search function"
                         required=""
+                        v-model="search"
                     />
                 </div>
             </form>
             <ul class="space-y-2">
-                <li v-for="item in functions">
+                <li v-for="item in functionsFilter">
                     <RouterLink
                         :to="item.path"
                         class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
