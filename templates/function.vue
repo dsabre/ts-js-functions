@@ -4,7 +4,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
 
 <template>
     <div class="space-y-8">
-        <h1>ucfirst</h1>
+        <h1>[[COMPONENT_NAME]]</h1>
 
         <div>
             <h2>Description</h2>

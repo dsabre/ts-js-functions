@@ -50,13 +50,13 @@ watch(search, () => {
 
     <aside
         id="default-sidebar"
-        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 shadow"
         aria-label="Sidenav"
     >
         <div
-            class="overflow-y-auto py-5 px-3 h-full bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+            class="overflow-y-auto py-5 px-3 h-full bg-gray-50 border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700"
         >
-            <a href="https://flowbite.com" class="flex items-center pl-2 mb-5 space-x-3">
+            <RouterLink to="/" class="flex items-center pl-2 mb-5 space-x-3">
                 <div class="flex gap-1">
                     <img src="@/assets/images/typescript.svg" class="h-6 sm:h-8" alt="TS" />
                     <img src="@/assets/images/javascript.svg" class="h-6 sm:h-8" alt="JS" />
@@ -64,7 +64,7 @@ watch(search, () => {
                 <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 dark:text-white"
                     >Functions</span
                 >
-            </a>
+            </RouterLink>
             <form class="flex items-center mb-4">
                 <label for="simple-search" class="sr-only">Search</label>
                 <div class="relative w-full">
@@ -123,7 +123,7 @@ watch(search, () => {
             <a
                 href="https://github.com/dsabre"
                 target="_blank"
-                class="flex justify-between items-center p-2 my-4 w-full rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700"
+                class="flex justify-between items-center p-2 my-4 w-full rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
             >
                 <span class="sr-only">Show GitHub profile</span>
                 <div class="flex items-center space-x-3">

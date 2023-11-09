@@ -1,8 +1,3 @@
-<script setup>
-</script>
+<script setup></script>
 
-<template>
-  <main>
-    TheWelcome
-  </main>
-</template>
+<template>home</template>
