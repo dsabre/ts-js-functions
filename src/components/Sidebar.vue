@@ -19,7 +19,7 @@ watch(search, () => {
     if (search.value.trim() === '') {
         functionsFilter.value = getClonedObject(functions.value);
     } else {
-        functionsFilter.value = getClonedObject(functions.value.filter((f) => f.name.includes(search.value.trim())));
+        functionsFilter.value = getClonedObject(functions.value.filter((f) => f.name.trim().toLowerCase().includes(search.value.trim().toLowerCase())));
     }
 });
 </script>
