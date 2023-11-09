@@ -13,15 +13,15 @@ import FunctionCode from '@/components/FunctionCode.vue';
             </p>
         </div>
 
-        <FunctionCode title="Typescript" lang="ts">
+        <FunctionCode title="Typescript" lang="typescript">
             Typescript_code
         </FunctionCode>
 
-        <FunctionCode title="Javascript" lang="js">
+        <FunctionCode title="Javascript" lang="javascript">
             Javascript_code
         </FunctionCode>
 
-        <FunctionCode title="Example" lang="js">
+        <FunctionCode title="Example" lang="javascript">
             Example_code
         </FunctionCode>
     </div>

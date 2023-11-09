@@ -13,7 +13,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
             </p>
         </div>
 
-        <FunctionCode title="Typescript" lang="ts">
+        <FunctionCode title="Typescript" lang="typescript">
             const stripTags = (html: string): string => {
                 const element = document.createElement('div');
                 
@@ -23,7 +23,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
             };
         </FunctionCode>
 
-        <FunctionCode title="Javascript" lang="js">
+        <FunctionCode title="Javascript" lang="javascript">
             const stripTags = (html) => {
                 const element = document.createElement('div');
                 
@@ -33,7 +33,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
             };
         </FunctionCode>
 
-        <FunctionCode title="Example" lang="js">
+        <FunctionCode title="Example" lang="javascript">
             import { stripTags } from './stripTags';
 
             const myHtml = '<p>This is some <b>sample</b> <i>HTML</i> text.</p>';

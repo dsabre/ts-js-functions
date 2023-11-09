@@ -1,4 +1,13 @@
 <script setup>
+import {nextTick, ref} from 'vue';
+import hljs from 'highlight.js/lib/core';
+import javascript from 'highlight.js/lib/languages/javascript';
+import typescript from 'highlight.js/lib/languages/typescript';
+import 'highlight.js/styles/stackoverflow-dark.css';
+
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('typescript', typescript);
+
 defineProps({
     title: {
         type: String,
@@ -9,6 +18,10 @@ defineProps({
         required: true
     }
 });
+
+const code = ref();
+
+nextTick(() => hljs.highlightElement(code.value));
 </script>
 
 <template>
@@ -38,6 +51,6 @@ defineProps({
             </div>
         </div>
 
-        <pre><code><slot></slot></code></pre>
+        <pre><code ref="code" :class="`language-${lang}`"><slot></slot></code></pre>
     </div>
 </template>
