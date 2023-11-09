@@ -13,26 +13,22 @@ import FunctionCode from '@/components/FunctionCode.vue';
             </p>
         </div>
 
-        <FunctionCode title="Typescript" lang="typescript">
-            const getFormData = &lt;T&gt;(event: Event): T => {
-                const formData = new FormData(event.target as HTMLFormElement);
-                const object: {[key: string]: unknown} = {};
+        <FunctionCode title="Typescript" lang="typescript" code="const getFormData = &amp;lt;T&amp;gt;(event: Event): T => {
+    const formData = new FormData(event.target as HTMLFormElement);
+    const object: {[key: string]: unknown} = {};
 
-                formData.forEach((value: unknown, key: string) => object[key] = value);
+    formData.forEach((value: unknown, key: string) => object[key] = value);
 
-                return object as T;
-            };
-        </FunctionCode>
+    return object as T;
+};" />
+            
+        <FunctionCode title="Javascript" lang="javascript" code="const getFormData = (event) => {
+    const formData = new FormData(event.target);
+    const object   = {};
 
-        <FunctionCode title="Javascript" lang="javascript">
-            const getFormData = (event) => {
-                const formData = new FormData(event.target);
-                const object   = {};
+    formData.forEach((value, key) => object[key] = value);
 
-                formData.forEach((value, key) => object[key] = value);
-
-                return object;
-            };
-        </FunctionCode>
+    return object;
+};" />
     </div>
 </template>

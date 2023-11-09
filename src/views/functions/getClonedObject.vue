@@ -13,12 +13,8 @@ import FunctionCode from '@/components/FunctionCode.vue';
             </p>
         </div>
 
-        <FunctionCode title="Typescript" lang="typescript">
-            const getClonedObject = (object: object | unknown[]): object | unknown[] => JSON.parse(JSON.stringify(object));
-        </FunctionCode>
+        <FunctionCode title="Typescript" lang="typescript" code="const getClonedObject = (object: object | unknown[]): object | unknown[] => JSON.parse(JSON.stringify(object));" />
 
-        <FunctionCode title="Javascript" lang="javascript">
-            const getClonedObject = (object) => JSON.parse(JSON.stringify(object));
-        </FunctionCode>
+        <FunctionCode title="Javascript" lang="javascript" code="const getClonedObject = (object) => JSON.parse(JSON.stringify(object));" />
     </div>
 </template>

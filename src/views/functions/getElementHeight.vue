@@ -14,40 +14,36 @@ import FunctionCode from '@/components/FunctionCode.vue';
             </p>
         </div>
 
-        <FunctionCode title="Typescript" lang="typescript">
-            const getElementHeight = (querySelector: string): number => {
-                const el: HTMLElement | null = document.querySelector(querySelector);
+        <FunctionCode title="Typescript" lang="typescript" code="const getElementHeight = (querySelector: string): number => {
+    const el: HTMLElement | null = document.querySelector(querySelector);
 
-                if(!el){
-                    return 0;
-                }
+    if(!el){
+        return 0;
+    }
 
-                let elHeight = el.offsetHeight;
-                
-                ['margin-top', 'margin-bottom', 'padding-top', 'padding-bottom'].forEach(property => {
-                    elHeight += parseInt(window.getComputedStyle(el).getPropertyValue(property));
-                });
-                
-                return elHeight;
-            };
-        </FunctionCode>
+    let elHeight = el.offsetHeight;
+    
+    ['margin-top', 'margin-bottom', 'padding-top', 'padding-bottom'].forEach(property => {
+        elHeight += parseInt(window.getComputedStyle(el).getPropertyValue(property));
+    });
+    
+    return elHeight;
+};" />
 
-        <FunctionCode title="Javascript" lang="javascript">
-            const getElementHeight = (querySelector) => {
-                const el = document.querySelector(querySelector);
+        <FunctionCode title="Javascript" lang="javascript" code="const getElementHeight = (querySelector) => {
+    const el = document.querySelector(querySelector);
 
-                if(!el){
-                    return 0;
-                }
+    if(!el){
+        return 0;
+    }
 
-                let elHeight = el.offsetHeight;
-                
-                ['margin-top', 'margin-bottom', 'padding-top', 'padding-bottom'].forEach(property => {
-                    elHeight += parseInt(window.getComputedStyle(el).getPropertyValue(property));
-                });
-                
-                return elHeight;
-            };
-        </FunctionCode>
+    let elHeight = el.offsetHeight;
+    
+    ['margin-top', 'margin-bottom', 'padding-top', 'padding-bottom'].forEach(property => {
+        elHeight += parseInt(window.getComputedStyle(el).getPropertyValue(property));
+    });
+    
+    return elHeight;
+};" />
     </div>
 </template>

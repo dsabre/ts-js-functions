@@ -13,43 +13,37 @@ import FunctionCode from '@/components/FunctionCode.vue';
             </p>
         </div>
 
-        <FunctionCode title="Typescript" lang="typescript">
-            const downloadFile = (filename: string, content: string): void => {
-                const element = document.createElement('a');
-                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
-                element.setAttribute('download', filename);
-                
-                element.style.display = 'none';
-                document.body.appendChild(element);
-                
-                element.click();
-                
-                document.body.removeChild(element);
-            };
-        </FunctionCode>
+        <FunctionCode title="Typescript" lang="typescript" code="const downloadFile = (filename: string, content: string): void => {
+    const element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+    element.setAttribute('download', filename);
+    
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    
+    element.click();
+    
+    document.body.removeChild(element);
+};"/>
 
-        <FunctionCode title="Javascript" lang="javascript">
-            const downloadFile = (filename, content) => {
-                const element = document.createElement('a');
-                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
-                element.setAttribute('download', filename);
-                
-                element.style.display = 'none';
-                document.body.appendChild(element);
-                
-                element.click();
-                
-                document.body.removeChild(element);
-            };
-        </FunctionCode>
+        <FunctionCode title="Javascript" lang="javascript" code="const downloadFile = (filename, content) => {
+    const element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+    element.setAttribute('download', filename);
+    
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    
+    element.click();
+    
+    document.body.removeChild(element);
+};"/>
 
-        <FunctionCode title="Example" lang="javascript">
-            import { downloadFile } from './downloadFile';
+        <FunctionCode title="Example" lang="javascript" code="import { downloadFile } from './downloadFile';
 
-            const myFilename = 'myFile.txt';
-            const myText = 'This is some sample text to be written to the file.';
+const myFilename = 'myFile.txt';
+const myText = 'This is some sample text to be written to the file.';
 
-            downloadFile(myFilename, myText);
-        </FunctionCode>
+downloadFile(myFilename, myText);" />
     </div>
 </template>
