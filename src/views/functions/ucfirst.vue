@@ -13,12 +13,8 @@ import FunctionCode from '@/components/FunctionCode.vue';
             </p>
         </div>
 
-        <FunctionCode title="Typescript" lang="typescript">
-            const ucfirst = (string: string): string => string.charAt(0).toUpperCase() + string.slice(1);
-        </FunctionCode>
+        <FunctionCode title="Typescript" lang="typescript" code="const ucfirst = (string: string): string => string.charAt(0).toUpperCase() + string.slice(1);" />
 
-        <FunctionCode title="Javascript" lang="javascript">
-            const ucfirst = (string) => string.charAt(0).toUpperCase() + string.slice(1);
-        </FunctionCode>
+        <FunctionCode title="Javascript" lang="javascript" code="const ucfirst = (string) => string.charAt(0).toUpperCase() + string.slice(1);" />
     </div>
 </template>

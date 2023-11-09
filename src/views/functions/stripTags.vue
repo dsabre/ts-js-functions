@@ -13,32 +13,26 @@ import FunctionCode from '@/components/FunctionCode.vue';
             </p>
         </div>
 
-        <FunctionCode title="Typescript" lang="typescript">
-            const stripTags = (html: string): string => {
-                const element = document.createElement('div');
-                
-                element.innerHTML = html;
-                
-                return element.textContent || element.innerText || '';
-            };
-        </FunctionCode>
+        <FunctionCode title="Typescript" lang="typescript" code="const stripTags = (html: string): string => {
+    const element = document.createElement('div');
+    
+    element.innerHTML = html;
+    
+    return element.textContent || element.innerText || '';
+};" />
+            
+        <FunctionCode title="Javascript" lang="javascript" code="const stripTags = (html) => {
+    const element = document.createElement('div');
+    
+    element.innerHTML = html;
+    
+    return element.textContent || element.innerText || '';
+};" />
 
-        <FunctionCode title="Javascript" lang="javascript">
-            const stripTags = (html) => {
-                const element = document.createElement('div');
-                
-                element.innerHTML = html;
-                
-                return element.textContent || element.innerText || '';
-            };
-        </FunctionCode>
+        <FunctionCode title="Example" lang="javascript" code="import { stripTags } from './stripTags';
 
-        <FunctionCode title="Example" lang="javascript">
-            import { stripTags } from './stripTags';
+const myHtml = '&amp;lt;p&amp;gt;This is some &amp;lt;b&amp;gt;sample&amp;lt;/b&amp;gt; &amp;lt;i&amp;gt;HTML&amp;lt;/i&amp;gt; text.&amp;lt;/p&amp;gt;';
 
-            const myHtml = '<p>This is some <b>sample</b> <i>HTML</i> text.</p>';
-
-            const strippedText = stripTags(myHtml); // returns 'This is some sample HTML text.'
-        </FunctionCode>
+const strippedText = stripTags(myHtml); // returns 'This is some sample HTML text.'" />
     </div>
 </template>

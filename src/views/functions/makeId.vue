@@ -17,7 +17,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     const charactersLength = characters.length;
-    for (let i = 0; i &lt; length; i++) {
+    for (let i = 0; i &amp;lt; length; i++) {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
@@ -27,7 +27,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     const charactersLength = characters.length;
-    for (let i = 0; i &lt; length; i++) {
+    for (let i = 0; i &amp;lt; length; i++) {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;

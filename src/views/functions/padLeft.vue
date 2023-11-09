@@ -13,20 +13,16 @@ import FunctionCode from '@/components/FunctionCode.vue';
             </p>
         </div>
 
-        <FunctionCode title="Typescript" lang="typescript">
-            const padLeft = const padLeft = (value: unknown, strLength: number, chr: string = '0'): string => {
-                const val = String(value);
-                const len = strLength - val.length;
-                return len > 0 ? chr.repeat(len) + val : val;
-            };
-        </FunctionCode>
+        <FunctionCode title="Typescript" lang="typescript" code="const padLeft = const padLeft = (value: unknown, strLength: number, chr: string = '0'): string => {
+    const val = String(value);
+    const len = strLength - val.length;
+    return len > 0 ? chr.repeat(len) + val : val;
+};" />
 
-        <FunctionCode title="Javascript" lang="javascript">
-            const padLeft = const padLeft = (value, strLength, chr) => {
-                const val = value + '';
-                const len = strLength - val.length;
-                return len > 0 ? chr.repeat(len) + val : val;
-            };
-        </FunctionCode>
+        <FunctionCode title="Javascript" lang="javascript" code="const padLeft = const padLeft = (value, strLength, chr) => {
+    const val = value + '';
+    const len = strLength - val.length;
+    return len > 0 ? chr.repeat(len) + val : val;
+};" />
     </div>
 </template>
