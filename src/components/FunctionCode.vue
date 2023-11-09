@@ -4,11 +4,13 @@ import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 import typescript from 'highlight.js/lib/languages/typescript';
 import 'highlight.js/styles/stackoverflow-dark.css';
+import {Notyf} from 'notyf';
+import 'notyf/notyf.min.css';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('typescript', typescript);
 
-defineProps({
+const props = defineProps({
     title: {
         type: String,
         required: true
@@ -23,7 +25,21 @@ defineProps({
     }
 });
 
+const notyf = new Notyf({
+    duration: 3000,
+    ripple: false,
+    dismissible: true,
+    position: {
+        x: 'right',
+        y: 'top'
+    }
+});
 const codeHolder = ref();
+const copyCode = () => {
+    navigator.clipboard.writeText(props.code.trim());
+
+    notyf.success('Code copied to clipboard');
+};
 
 nextTick(() => hljs.highlightElement(codeHolder.value));
 </script>
@@ -33,6 +49,7 @@ nextTick(() => hljs.highlightElement(codeHolder.value));
         <div class="flex justify-between items-center">
             <h2>{{ title }}</h2>
             <button
+                @click.prevent="copyCode"
                 class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
             >
                 <svg
@@ -41,7 +58,7 @@ nextTick(() => hljs.highlightElement(codeHolder.value));
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="w-5 h-5" 
+                    class="w-5 h-5"
                 >
                     <path
                         stroke-linecap="round"
