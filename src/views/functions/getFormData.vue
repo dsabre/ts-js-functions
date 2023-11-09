@@ -13,7 +13,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
             </p>
         </div>
 
-        <FunctionCode title="Typescript">
+        <FunctionCode title="Typescript" lang="ts">
             const getFormData = &lt;T&gt;(event: Event): T => {
                 const formData = new FormData(event.target as HTMLFormElement);
                 const object: {[key: string]: unknown} = {};
@@ -24,7 +24,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
             };
         </FunctionCode>
 
-        <FunctionCode title="Javascript">
+        <FunctionCode title="Javascript" lang="js">
             const getFormData = (event) => {
                 const formData = new FormData(event.target);
                 const object   = {};

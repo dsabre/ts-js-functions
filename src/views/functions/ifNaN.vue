@@ -13,15 +13,15 @@ import FunctionCode from '@/components/FunctionCode.vue';
             </p>
         </div>
 
-        <FunctionCode title="Typescript">
+        <FunctionCode title="Typescript" lang="ts">
             const ifNaN = (number: number, defaultRet: number = 0): number => isNaN(number) ? defaultRet : number;
         </FunctionCode>
 
-        <FunctionCode title="Javascript">
+        <FunctionCode title="Javascript" lang="js">
             const ifNaN = (number, defaultRet = 0) => isNaN(number) ? defaultRet : number;
         </FunctionCode>
 
-        <FunctionCode title="Example">
+        <FunctionCode title="Example" lang="js">
             import { ifNaN } from './ifNaN';
 
             const myNumber = 5;

@@ -13,7 +13,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
             </p>
         </div>
 
-        <FunctionCode title="Typescript">
+        <FunctionCode title="Typescript" lang="ts">
             const padLeft = const padLeft = (value: unknown, strLength: number, chr: string = '0'): string => {
                 const val = String(value);
                 const len = strLength - val.length;
@@ -21,7 +21,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
             };
         </FunctionCode>
 
-        <FunctionCode title="Javascript">
+        <FunctionCode title="Javascript" lang="js">
             const padLeft = const padLeft = (value, strLength, chr) => {
                 const val = value + '';
                 const len = strLength - val.length;

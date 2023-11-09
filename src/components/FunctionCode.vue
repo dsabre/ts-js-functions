@@ -1,6 +1,13 @@
 <script setup>
 defineProps({
-    title: String
+    title: {
+        type: String,
+        required: true
+    },
+    lang: {
+        type: String,
+        required: true
+    }
 });
 </script>
 

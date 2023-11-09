@@ -13,11 +13,11 @@ import FunctionCode from '@/components/FunctionCode.vue';
             </p>
         </div>
 
-        <FunctionCode title="Typescript">
+        <FunctionCode title="Typescript" lang="ts">
             const getClonedObject = (object: object | unknown[]): object | unknown[] => JSON.parse(JSON.stringify(object));
         </FunctionCode>
 
-        <FunctionCode title="Javascript">
+        <FunctionCode title="Javascript" lang="js">
             const getClonedObject = (object) => JSON.parse(JSON.stringify(object));
         </FunctionCode>
     </div>

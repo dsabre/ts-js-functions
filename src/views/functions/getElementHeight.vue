@@ -14,7 +14,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
             </p>
         </div>
 
-        <FunctionCode title="Typescript">
+        <FunctionCode title="Typescript" lang="ts">
             const getElementHeight = (querySelector: string): number => {
                 const el: HTMLElement | null = document.querySelector(querySelector);
 
@@ -32,7 +32,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
             };
         </FunctionCode>
 
-        <FunctionCode title="Javascript">
+        <FunctionCode title="Javascript" lang="js">
             const getElementHeight = (querySelector) => {
                 const el = document.querySelector(querySelector);
 

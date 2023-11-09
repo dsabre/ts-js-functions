@@ -13,7 +13,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
             </p>
         </div>
 
-        <FunctionCode title="Typescript">
+        <FunctionCode title="Typescript" lang="ts">
             const downloadFile = (filename: string, content: string): void => {
                 const element = document.createElement('a');
                 element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
@@ -28,7 +28,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
             };
         </FunctionCode>
 
-        <FunctionCode title="Javascript">
+        <FunctionCode title="Javascript" lang="js">
             const downloadFile = (filename, content) => {
                 const element = document.createElement('a');
                 element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
@@ -43,7 +43,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
             };
         </FunctionCode>
 
-        <FunctionCode title="Example">
+        <FunctionCode title="Example" lang="js">
             import { downloadFile } from './downloadFile';
 
             const myFilename = 'myFile.txt';
