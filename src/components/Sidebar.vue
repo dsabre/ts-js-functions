@@ -12,8 +12,6 @@ functionsList.forEach((fName) => {
     functions.value.push({name: fName, path: `/f/${fName}`});
     functionsFilter.value.push({name: fName, path: `/f/${fName}`});
 });
-functions.value.sort((a, b) => a.name.localeCompare(b.name));
-functionsFilter.value.sort((a, b) => a.name.localeCompare(b.name));
 
 watch(search, () => {
     if (search.value.trim() === '') {

@@ -10,4 +10,6 @@ const functionsList = [
     'stripTags'
 ];
 
+functionsList.sort();
+
 export default functionsList;

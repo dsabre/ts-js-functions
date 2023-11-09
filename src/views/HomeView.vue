@@ -1,3 +1,10 @@
-<script setup></script>
+<script setup>
+</script>
 
-<template>home</template>
+<template>
+    <div>
+        <h1>TS-JS functions</h1>
+
+        
+    </div>
+</template>
