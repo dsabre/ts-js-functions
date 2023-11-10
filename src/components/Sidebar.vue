@@ -1,23 +1,21 @@
 <script setup>
 import {RouterLink} from 'vue-router';
 import {ref, watch} from 'vue';
-import functionsList from '@/utils/functionsList';
+import {routes} from '../router';
 
-const functions = ref([]);
-const functionsFilter = ref([]);
+const getFunctions = () => routes.filter((r) => r.path.startsWith('/f/'));
+const functions = ref(getFunctions());
+const functionsFilter = ref(getFunctions());
 const search = ref('');
 const getClonedObject = (object) => JSON.parse(JSON.stringify(object));
-
-functionsList.forEach((fName) => {
-    functions.value.push({name: fName, path: `/f/${fName}`});
-    functionsFilter.value.push({name: fName, path: `/f/${fName}`});
-});
 
 watch(search, () => {
     if (search.value.trim() === '') {
         functionsFilter.value = getClonedObject(functions.value);
     } else {
-        functionsFilter.value = getClonedObject(functions.value.filter((f) => f.name.trim().toLowerCase().includes(search.value.trim().toLowerCase())));
+        functionsFilter.value = getClonedObject(
+            functions.value.filter((f) => f.name.trim().toLowerCase().includes(search.value.trim().toLowerCase()))
+        );
     }
 });
 </script>
@@ -115,9 +113,7 @@ watch(search, () => {
                 </li>
             </ul>
         </div>
-        <div
-            class="absolute bottom-0 left-0 justify-center p-4 w-full z-20"
-        >
+        <div class="absolute bottom-0 left-0 justify-center p-4 w-full z-20">
             <a
                 href="https://github.com/dsabre"
                 target="_blank"
@@ -125,17 +121,9 @@ watch(search, () => {
             >
                 <span class="sr-only">Show GitHub profile</span>
                 <div class="flex items-center space-x-3">
-                    <img
-                        src="https://github.com/dsabre.png"
-                        class="w-8 h-8 rounded-full"
-                        alt="Bonnie avatar"
-                    />
+                    <img src="https://github.com/dsabre.png" class="w-8 h-8 rounded-full" alt="Bonnie avatar" />
                     <div class="text-left">
-                        <div
-                            class="font-semibold leading-none text-gray-900 dark:text-white mb-0.5"
-                        >
-                            Daniele Sabre
-                        </div>
+                        <div class="font-semibold leading-none text-gray-900 dark:text-white mb-0.5">Daniele Sabre</div>
                     </div>
                 </div>
             </a>
