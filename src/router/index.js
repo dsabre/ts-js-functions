@@ -22,6 +22,7 @@ addRoute('stripTags');
 addRoute('slugify');
 addRoute('onlyUnique');
 addRoute('splitStringWithoutBreakingWords');
+addRoute('removeMultipleSpaces');
 // NEW ROUTES ABOVE THIS LINE (DO NOT REMOVE THIS COMMENT)
 
 // sort routes alphabetically
