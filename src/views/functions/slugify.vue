@@ -1,7 +1,7 @@
 <script setup>
 import FunctionCode from '@/components/FunctionCode.vue';
 
-const description = '';
+const description = 'Create a slug from a string';
 </script>
 
 <template>
@@ -13,12 +13,18 @@ const description = '';
             <p class="text-gray-900 dark:text-white" v-html="description" />
         </div>
 
-        <FunctionCode title="Typescript" lang="typescript" code="" />
+        <FunctionCode title="Typescript" lang="typescript" code="const slugify = (str: string, separator: string = '-'): string =>
+    str
+        .toLowerCase()
+        .trim()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/[\s_-]+/g, separator)
+        .replace(/^-+|-+$/g, '');" />
 
         <FunctionCode
             title="Javascript"
             lang="javascript"
-            code="export const slugify = (str, separator = '-') =>
+            code="const slugify = (str, separator = '-') =>
     str
         .toLowerCase()
         .trim()
