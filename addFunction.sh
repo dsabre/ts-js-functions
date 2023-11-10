@@ -1,18 +1,16 @@
 #!/bin/bash
 
-# while true; do
-#     # Prompt user for function name
-#     read -p "Enter function name: " fName
+while true; do
+    # Prompt user for function name
+    read -p "Enter function name: " fName
 
-#     # Check if the function name is not empty
-#     if [ -n "$fName" ]; then
-#         break  # Exit the loop if the function name is provided
-#     else
-#         echo "Function name cannot be empty. Please try again."
-#     fi
-# done
-
-fName=test
+    # Check if the function name is not empty
+    if [ -n "$fName" ]; then
+        break  # Exit the loop if the function name is provided
+    else
+        echo "Function name cannot be empty. Please try again."
+    fi
+done
 
 fPath="src/views/functions/${fName}.vue"
 
@@ -23,13 +21,13 @@ if [ -e "$fPath" ]; then
 fi
 
 # Prompt user for function description
-temp_file_ds=$(mktemp)
+temp_file_ds1=$(mktemp)
 temp_file_ds2=$(mktemp)
 echo "Enter function description (press Ctrl+D to finish):"
-cat > "$temp_file_ds"
-sed -i 's/$/<br>/g' "$temp_file_ds"
-tr -d '\n' < "$temp_file_ds" > "$temp_file_ds2"
-sed 's/.\{4\}$//' "$temp_file_ds2" > "$temp_file_ds"
+cat > "$temp_file_ds1"
+sed -i 's/$/<br>/g' "$temp_file_ds1"
+tr -d '\n' < "$temp_file_ds1" > "$temp_file_ds2"
+sed 's/.\{4\}$//' "$temp_file_ds2" > "$temp_file_ds1"
 
 temp_file_ts=$(mktemp)
 echo "Enter TypeScript code (press Ctrl+D to finish):"
@@ -78,8 +76,8 @@ rm -f "$temp_file"
 # format file
 pnpm exec prettier "$fPath" --write
 
-# delete temparary files
-rm -f "$temp_file_ds" "$temp_file_ds2" "$temp_file_ts" "$temp_file_js" "$temp_file_ex"
+# delete temporary files
+rm -f "$temp_file_ds1" "$temp_file_ds2" "$temp_file_ts" "$temp_file_js" "$temp_file_ex"
 
 # add route for this function
 sed -i "s/\/\/ NEW ROUTES ABOVE THIS LINE (DO NOT REMOVE THIS COMMENT)/addRoute('${fName}');\n\/\/ NEW ROUTES ABOVE THIS LINE (DO NOT REMOVE THIS COMMENT)/g" "src/router/index.js"
