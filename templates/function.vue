@@ -1,7 +1,7 @@
 <script setup>
 import FunctionCode from '@/components/FunctionCode.vue';
 
-const description = 'DESCRIPTION';
+const description = '__DESCRIPTION__';
 </script>
 
 <template>
@@ -13,10 +13,10 @@ const description = 'DESCRIPTION';
             <p class="text-gray-900 dark:text-white" v-html="description"/>
         </div>
 
-        <FunctionCode title="Typescript" lang="typescript" code="TYPESCRIPT_CODE" />
+        <FunctionCode title="Typescript" lang="typescript" code="__TYPESCRIPT_CODE__" />
 
-        <FunctionCode title="Javascript" lang="javascript" code="JAVASCRIPT_CODE" />
+        <FunctionCode title="Javascript" lang="javascript" code="__JAVASCRIPT_CODE__" />
         
-        <FunctionCode title="Example" lang="javascript" code="EXAMPLE_CODE" />
+        <FunctionCode title="Example" lang="javascript" code="__EXAMPLE_CODE__" />
     </div>
 </template>
