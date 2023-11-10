@@ -1,7 +1,8 @@
 <script setup>
 import FunctionCode from '@/components/FunctionCode.vue';
 
-const description = 'Get the height in pixel of a given query selector.<br><u>Pay attention:</u> the selector must point to only one DOM element, otherwise the function will return the height of the first matching element.';
+const description =
+    'Get the height in pixel of a given query selector.<br><u>Pay attention:</u> the selector must point to only one DOM element, otherwise the function will return the height of the first matching element.';
 </script>
 
 <template>
@@ -10,10 +11,13 @@ const description = 'Get the height in pixel of a given query selector.<br><u>Pa
 
         <div v-if="description">
             <h2>Description</h2>
-            <p class="text-gray-900 dark:text-white text-justify" v-html="description"/>
+            <p class="text-gray-900 dark:text-white text-justify" v-html="description" />
         </div>
 
-        <FunctionCode title="Typescript" lang="typescript" code="const getElementHeight = (querySelector: string): number => {
+        <FunctionCode
+            title="Typescript"
+            lang="typescript"
+            code="const getElementHeight = (querySelector: string): number => {
     const el: HTMLElement | null = document.querySelector(querySelector);
 
     if(!el){
@@ -27,9 +31,13 @@ const description = 'Get the height in pixel of a given query selector.<br><u>Pa
     });
     
     return elHeight;
-};" />
+};"
+        />
 
-        <FunctionCode title="Javascript" lang="javascript" code="const getElementHeight = (querySelector) => {
+        <FunctionCode
+            title="Javascript"
+            lang="javascript"
+            code="const getElementHeight = (querySelector) => {
     const el = document.querySelector(querySelector);
 
     if(!el){
@@ -43,6 +51,7 @@ const description = 'Get the height in pixel of a given query selector.<br><u>Pa
     });
     
     return elHeight;
-};" />
+};"
+        />
     </div>
 </template>

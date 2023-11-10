@@ -3,15 +3,14 @@
 @import './flowbite-pro-2.css';
 @import './flowbite-pro-3.css'; */
 
-
-body{
+body {
     @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-white;
 }
 
-h1{
+h1 {
     @apply text-4xl font-bold text-gray-900 dark:text-white;
 }
 
-h2{
+h2 {
     @apply text-2xl font-bold text-gray-900 dark:text-white;
 }

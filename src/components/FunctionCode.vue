@@ -70,6 +70,8 @@ nextTick(() => hljs.highlightElement(codeHolder.value));
             </button>
         </div>
 
-        <pre class="text-xs sm:text-sm border dark:border-gray-800"><code ref="codeHolder" :class="`language-${lang}`" v-html="code"></code></pre>
+        <pre
+            class="text-xs sm:text-sm border dark:border-gray-800"
+        ><code ref="codeHolder" :class="`language-${lang}`" v-html="code"></code></pre>
     </div>
 </template>

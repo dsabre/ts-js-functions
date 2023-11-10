@@ -10,10 +10,13 @@ const description = 'Generate and return a random string of a given length.';
 
         <div v-if="description">
             <h2>Description</h2>
-            <p class="text-gray-900 dark:text-white text-justify" v-html="description"/>
+            <p class="text-gray-900 dark:text-white text-justify" v-html="description" />
         </div>
 
-        <FunctionCode title="Typescript" lang="typescript" code="const makeId = (length: number): string => {
+        <FunctionCode
+            title="Typescript"
+            lang="typescript"
+            code="const makeId = (length: number): string => {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     const charactersLength = characters.length;
@@ -21,9 +24,13 @@ const description = 'Generate and return a random string of a given length.';
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
-};" />
+};"
+        />
 
-        <FunctionCode title="Javascript" lang="javascript" code="const makeId = (length) => {
+        <FunctionCode
+            title="Javascript"
+            lang="javascript"
+            code="const makeId = (length) => {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     const charactersLength = characters.length;
@@ -31,6 +38,7 @@ const description = 'Generate and return a random string of a given length.';
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
-};" />
+};"
+        />
     </div>
 </template>
