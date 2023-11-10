@@ -20,6 +20,7 @@ addRoute('makeId');
 addRoute('getClonedObject');
 addRoute('stripTags');
 addRoute('slugify');
+addRoute('onlyUnique');
 // NEW ROUTES ABOVE THIS LINE (DO NOT REMOVE THIS COMMENT)
 
 // sort routes alphabetically
