@@ -9,7 +9,7 @@
     "gen-view": "npx @dsabre/generate-vue-cli@latest --dir=src/views --suffix=View",
     "gen-component": "npx @dsabre/generate-vue-cli@latest --dir=src/components",
     "gen-func": "npx @dsabre/generate-vue-cli@latest --dir=src/views/functions --template=templates/function.vue",
-    "build-github-pages": "vite build --base=/ts-js-functions/"
+    "build-github-pages": "vite build --base=/ts-js-functions/ && cd dist && cp index.html 404.html && cd .."
   },
   "dependencies": {
     "flowbite": "^2.0.0",
