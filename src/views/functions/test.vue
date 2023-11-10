@@ -1,8 +1,8 @@
 <script setup>
 import FunctionCode from '@/components/FunctionCode.vue';
 
-const description = 'Get the height in pixel of a given query selector.
-Pay attention: the selector must point to only one DOM element, otherwise the function will return the height of the first matching element.';
+const description =
+    'Get the height in pixel of a given query selector.<br>Pay attention: the selector must point to only one DOM element, otherwise the function will return the height of the first matching element.<br>';
 </script>
 
 <template>
@@ -17,34 +17,40 @@ Pay attention: the selector must point to only one DOM element, otherwise the fu
         <FunctionCode
             title="Typescript"
             lang="typescript"
-            code="const downloadFile = (filename: string, content: string): void => {
-    const element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
-    element.setAttribute('download', filename);
+            code="const getElementHeight = (querySelector: string): number => {
+    const el: HTMLElement | null = document.querySelector(querySelector);
+
+    if(!el){
+        return 0;
+    }
+
+    let elHeight = el.offsetHeight;
     
-    element.style.display = 'none';
-    document.body.appendChild(element);
+    ['margin-top', 'margin-bottom', 'padding-top', 'padding-bottom'].forEach(property => {
+        elHeight += parseInt(window.getComputedStyle(el).getPropertyValue(property));
+    });
     
-    element.click();
-    
-    document.body.removeChild(element);
+    return elHeight;
 };"
         />
 
         <FunctionCode
             title="Javascript"
             lang="javascript"
-            code="const downloadFile = (filename, content) => {
-    const element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
-    element.setAttribute('download', filename);
+            code="const getElementHeight = (querySelector) => {
+    const el = document.querySelector(querySelector);
+
+    if(!el){
+        return 0;
+    }
+
+    let elHeight = el.offsetHeight;
     
-    element.style.display = 'none';
-    document.body.appendChild(element);
+    ['margin-top', 'margin-bottom', 'padding-top', 'padding-bottom'].forEach(property => {
+        elHeight += parseInt(window.getComputedStyle(el).getPropertyValue(property));
+    });
     
-    element.click();
-    
-    document.body.removeChild(element);
+    return elHeight;
 };"
         />
 
