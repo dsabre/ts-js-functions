@@ -9,14 +9,14 @@ import FunctionCode from '@/components/FunctionCode.vue';
         <div>
             <h2>Description</h2>
             <p class="text-gray-900 dark:text-white">
-                Description
+                DESCRIPTION
             </p>
         </div>
 
-        <FunctionCode title="Typescript" lang="typescript" code="Typescript_code" />
+        <FunctionCode title="Typescript" lang="typescript" code="TYPESCRIPT_CODE" />
 
-        <FunctionCode title="Javascript" lang="javascript" code="Javascript_code" />
+        <FunctionCode title="Javascript" lang="javascript" code="JAVASCRIPT_CODE" />
         
-        <FunctionCode title="Example" lang="javascript" code="Example_code" />
+        <FunctionCode title="Example" lang="javascript" code="EXAMPLE_CODE" />
     </div>
 </template>
