@@ -45,7 +45,7 @@ nextTick(() => hljs.highlightElement(codeHolder.value));
 </script>
 
 <template>
-    <div class="space-y-2">
+    <div v-if="code" class="space-y-2">
         <div class="flex justify-between items-center">
             <h2>{{ title }}</h2>
             <button
