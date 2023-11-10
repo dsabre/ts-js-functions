@@ -5,7 +5,7 @@ import Sidebar from '@/components/Sidebar.vue';
 
 <template>
     <Sidebar />
-    <main class="ml-0 sm:ml-64 py-8 px-4">
+    <main class="ml-0 sm:ml-80 py-8 px-4">
         <RouterView />
     </main>
 </template>

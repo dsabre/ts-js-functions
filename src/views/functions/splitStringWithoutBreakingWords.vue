@@ -13,7 +13,29 @@ const description = '';
             <p class="text-gray-900 dark:text-white" v-html="description" />
         </div>
 
-        <FunctionCode title="Typescript" lang="typescript" code="" />
+        <FunctionCode title="Typescript" lang="typescript" code="const splitStringWithoutBreakingWords = (str: string, maxLength: number): string[] => {
+    const words = str.split(' ');
+    const parts: string[] = [];
+    let currentPart = '';
+
+    for (const word of words) {
+        if (currentPart.length + word.length <= maxLength) {
+            if (currentPart !== '') {
+                currentPart += ' ';
+            }
+            currentPart += word;
+        } else {
+            parts.push(currentPart);
+            currentPart = word;
+        }
+    }
+
+    if (currentPart !== '') {
+        parts.push(currentPart);
+    }
+
+    return parts;
+};" />
 
         <FunctionCode
             title="Javascript"
