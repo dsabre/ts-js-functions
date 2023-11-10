@@ -29,6 +29,7 @@ echo "Enter function description (press Ctrl+D to finish):"
 cat > "$temp_file_ds"
 sed -i 's/$/<br>/g' "$temp_file_ds"
 tr -d '\n' < "$temp_file_ds" > "$temp_file_ds2"
+sed 's/.\{4\}$//' "$temp_file_ds2" > "$temp_file_ds"
 
 temp_file_ts=$(mktemp)
 echo "Enter TypeScript code (press Ctrl+D to finish):"
@@ -48,7 +49,7 @@ pnpm gen-func --name="$fName" || exit $?
 # replace function infos in page
 temp_file=$(mktemp)
 templ=$(<$fPath)
-value=$(<$temp_file_ds2)
+value=$(<$temp_file_ds)
 echo "${templ//__DESCRIPTION__/$value}" > "$temp_file"
 cat "$temp_file" > "$fPath"
 rm -f "$temp_file"
