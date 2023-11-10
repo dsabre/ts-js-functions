@@ -1,9 +1,16 @@
 <script setup>
-import {RouterLink} from 'vue-router';
+import {RouterLink, useRoute} from 'vue-router';
 import {ref, watch} from 'vue';
 import {routes} from '../router';
 
-const getFunctions = () => routes.filter((r) => r.path.startsWith('/f/'));
+const route = useRoute();
+const getFunctions = () =>
+    routes
+        .filter((r) => r.path.startsWith('/f/'))
+        .map((r) => {
+            r.isHome = routes.filter((r) => r.path === '/')[0].component === r.component;
+            return r;
+        });
 const functions = ref(getFunctions());
 const functionsFilter = ref(getFunctions());
 const search = ref('');
@@ -106,7 +113,10 @@ watch(search, () => {
                 <li v-for="item in functionsFilter">
                     <RouterLink
                         :to="item.path"
-                        class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                        :class="{
+                            'flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group': true,
+                            'router-link-active': route.path === '/' && item.isHome
+                        }"
                     >
                         <svg
                             class="w-[12px] h-[12px] text-gray-800 dark:text-white"
