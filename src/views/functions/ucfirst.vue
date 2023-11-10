@@ -8,7 +8,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
 
         <div>
             <h2>Description</h2>
-            <p class="text-gray-900 dark:text-white">
+            <p class="text-gray-900 dark:text-white text-justify">
                 Capitalize the first letter of a string.
             </p>
         </div>

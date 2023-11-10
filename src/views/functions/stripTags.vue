@@ -8,7 +8,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
 
         <div>
             <h2>Description</h2>
-            <p class="text-gray-900 dark:text-white">
+            <p class="text-gray-900 dark:text-white text-justify">
                 Function that takes one argument - html. It creates a new &lt;div&gt; element, sets its innerHTML property to the given html, and returns the text content of the element, without any HTML tags.
             </p>
         </div>

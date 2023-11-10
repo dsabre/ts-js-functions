@@ -8,7 +8,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
 
         <div>
             <h2>Description</h2>
-            <p class="text-gray-900 dark:text-white">
+            <p class="text-gray-900 dark:text-white text-justify">
                 Function that takes two arguments - filename and content. It creates a new &lt;a&gt; element, sets its href attribute to a data URL that contains the given content as plain text, and sets its download attribute to the given filename. It then adds this element to the DOM, triggers a click on the element to download the file, and finally removes the element from the DOM.
             </p>
         </div>

@@ -21,28 +21,39 @@ watch(search, () => {
 </script>
 
 <template>
-    <button
-        data-drawer-target="default-sidebar"
-        data-drawer-toggle="default-sidebar"
-        aria-controls="default-sidebar"
-        type="button"
-        class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-    >
-        <span class="sr-only">Open sidebar</span>
-        <svg
-            class="w-6 h-6"
-            aria-hidden="true"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
+    <div class="flex items-center justify-between sm:hidden pt-2">
+        <button
+            data-drawer-target="default-sidebar"
+            data-drawer-toggle="default-sidebar"
+            aria-controls="default-sidebar"
+            type="button"
+            class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
         >
-            <path
-                clip-rule="evenodd"
-                fill-rule="evenodd"
-                d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
-            ></path>
-        </svg>
-    </button>
+            <span class="sr-only">Open sidebar</span>
+            <svg
+                class="w-6 h-6"
+                aria-hidden="true"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                    d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+                ></path>
+            </svg>
+        </button>
+        <RouterLink to="/" class="flex items-center space-x-1 mr-2">
+            <div class="flex gap-1">
+                <img src="@/assets/images/typescript.svg" class="h-6 sm:h-8" alt="TS" />
+                <img src="@/assets/images/javascript.svg" class="h-6 sm:h-8" alt="JS" />
+            </div>
+            <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 dark:text-white"
+                >Functions</span
+            >
+        </RouterLink>
+    </div>
 
     <aside
         id="default-sidebar"
@@ -52,7 +63,7 @@ watch(search, () => {
         <div
             class="overflow-y-auto py-5 px-3 h-full bg-gray-50 border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700"
         >
-            <RouterLink to="/" class="flex items-center pl-2 mb-5 space-x-3">
+            <RouterLink to="/" class="hidden sm:flex items-center pl-2 mb-5 space-x-3">
                 <div class="flex gap-1">
                     <img src="@/assets/images/typescript.svg" class="h-6 sm:h-8" alt="TS" />
                     <img src="@/assets/images/javascript.svg" class="h-6 sm:h-8" alt="JS" />
@@ -91,7 +102,7 @@ watch(search, () => {
                     />
                 </div>
             </form>
-            <ul class="space-y-2">
+            <ul class="menu space-y-2">
                 <li v-for="item in functionsFilter">
                     <RouterLink
                         :to="item.path"
@@ -130,3 +141,9 @@ watch(search, () => {
         </div>
     </aside>
 </template>
+
+<style scoped>
+.menu .router-link-active {
+    @apply bg-gray-100 dark:bg-gray-700;
+}
+</style>

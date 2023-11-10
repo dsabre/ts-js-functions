@@ -8,7 +8,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
 
         <div>
             <h2>Description</h2>
-            <p class="text-gray-900 dark:text-white">
+            <p class="text-gray-900 dark:text-white text-justify">
                 It creates a new object or array by cloning the given object using the JSON stringify and parse methods.
             </p>
         </div>

@@ -8,7 +8,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
 
         <div>
             <h2>Description</h2>
-            <p class="text-gray-900 dark:text-white">
+            <p class="text-gray-900 dark:text-white text-justify">
                 Get the height in pixel of a given query selector.<br>
                 <u>Pay attention:</u> the selector must point to only one DOM element, otherwise the function will return the height of the first matching element.
             </p>

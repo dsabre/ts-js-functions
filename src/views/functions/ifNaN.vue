@@ -8,7 +8,7 @@ import FunctionCode from '@/components/FunctionCode.vue';
 
         <div>
             <h2>Description</h2>
-            <p class="text-gray-900 dark:text-white">
+            <p class="text-gray-900 dark:text-white text-justify">
                 Function that takes two arguments - number and defaultRet. It checks whether the given number is NaN (Not a Number) or not, and returns defaultRet if the number is indeed NaN.
             </p>
         </div>

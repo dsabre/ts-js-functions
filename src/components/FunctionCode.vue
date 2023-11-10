@@ -50,7 +50,7 @@ nextTick(() => hljs.highlightElement(codeHolder.value));
             <h2>{{ title }}</h2>
             <button
                 @click.prevent="copyCode"
-                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+                class="inline-flex justify-center items-center py-2 px-3 sm:py-3 sm:px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -70,6 +70,6 @@ nextTick(() => hljs.highlightElement(codeHolder.value));
             </button>
         </div>
 
-        <pre class="text-sm"><code ref="codeHolder" :class="`language-${lang}`" v-html="code"></code></pre>
+        <pre class="text-xs sm:text-sm"><code ref="codeHolder" :class="`language-${lang}`" v-html="code"></code></pre>
     </div>
 </template>
