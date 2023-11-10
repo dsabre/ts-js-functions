@@ -1,16 +1,16 @@
 <script setup>
 import FunctionCode from '@/components/FunctionCode.vue';
+
+const description = 'Generate and return a random string of a given length.';
 </script>
 
 <template>
     <div class="space-y-8">
         <h1>makeId</h1>
 
-        <div>
+        <div v-if="description">
             <h2>Description</h2>
-            <p class="text-gray-900 dark:text-white text-justify">
-                Generate and return a random string of a given length.
-            </p>
+            <p class="text-gray-900 dark:text-white text-justify" v-html="description"/>
         </div>
 
         <FunctionCode title="Typescript" lang="typescript" code="const makeId = (length: number): string => {

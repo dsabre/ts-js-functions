@@ -1,16 +1,16 @@
 <script setup>
 import FunctionCode from '@/components/FunctionCode.vue';
+
+const description = 'Return an object from a submitted form data.';
 </script>
 
 <template>
     <div class="space-y-8">
         <h1>getFormData</h1>
 
-        <div>
+        <div v-if="description">
             <h2>Description</h2>
-            <p class="text-gray-900 dark:text-white text-justify">
-                Return an object from a submitted form data.
-            </p>
+            <p class="text-gray-900 dark:text-white text-justify" v-html="description"/>
         </div>
 
         <FunctionCode title="Typescript" lang="typescript" code="const getFormData = &amp;lt;T&amp;gt;(event: Event): T => {

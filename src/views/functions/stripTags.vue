@@ -1,16 +1,16 @@
 <script setup>
 import FunctionCode from '@/components/FunctionCode.vue';
+
+const description = 'Function that takes one argument - html. It creates a new &lt;div&gt; element, sets its innerHTML property to the given html, and returns the text content of the element, without any HTML tags.';
 </script>
 
 <template>
     <div class="space-y-8">
         <h1>stripTags</h1>
 
-        <div>
+        <div v-if="description">
             <h2>Description</h2>
-            <p class="text-gray-900 dark:text-white text-justify">
-                Function that takes one argument - html. It creates a new &lt;div&gt; element, sets its innerHTML property to the given html, and returns the text content of the element, without any HTML tags.
-            </p>
+            <p class="text-gray-900 dark:text-white text-justify" v-html="description"/>
         </div>
 
         <FunctionCode title="Typescript" lang="typescript" code="const stripTags = (html: string): string => {
