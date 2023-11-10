@@ -1,16 +1,20 @@
 #!/bin/bash
 
-while true; do
-    # Prompt user for function name
-    read -p "Enter function name: " fName
+fName=$1
 
-    # Check if the function name is not empty
-    if [ -n "$fName" ]; then
-        break  # Exit the loop if the function name is provided
-    else
-        echo "Function name cannot be empty. Please try again."
-    fi
-done
+if [ -z "$fName" ]; then
+    while true; do
+        # Prompt user for function name
+        read -p "Enter function name: " fName
+
+        # Check if the function name is not empty
+        if [ -n "$fName" ]; then
+            break  # Exit the loop if the function name is provided
+        else
+            echo "Function name cannot be empty. Please try again."
+        fi
+    done
+fi
 
 fPath="src/views/functions/${fName}.vue"
 
@@ -51,7 +55,7 @@ pnpm gen-func --name="$fName" || exit $?
 # replace function infos in page
 temp_file=$(mktemp)
 templ=$(<$fPath)
-value=$(<$temp_file_ds)
+value=$(<$temp_file_ds1)
 echo "${templ//__DESCRIPTION__/$value}" > "$temp_file"
 cat "$temp_file" > "$fPath"
 rm -f "$temp_file"
