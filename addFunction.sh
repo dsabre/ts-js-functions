@@ -41,6 +41,10 @@ temp_file_ex=$(mktemp)
 echo "Enter example code (press Ctrl+D to finish):"
 cat > "$temp_file_ex"
 
+echo
+echo "Starting file generation..."
+echo
+
 # create function file
 pnpm gen-func --name="$fName" || exit $?
 

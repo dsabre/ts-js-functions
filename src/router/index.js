@@ -19,7 +19,6 @@ addRoute('downloadFile');
 addRoute('makeId');
 addRoute('getClonedObject');
 addRoute('stripTags');
-addRoute('test');
 // NEW ROUTES ABOVE THIS LINE (DO NOT REMOVE THIS COMMENT)
 
 // sort routes alphabetically
