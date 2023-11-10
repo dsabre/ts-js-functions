@@ -48,6 +48,6 @@ sed -i "s/\/\/ NEW ROUTES ABOVE THIS LINE (DO NOT REMOVE THIS COMMENT)/addRoute(
 pnpm exec prettier "$fPath" --write
 
 # add file to git
-git add "$fPath"
+git add "$fPath" "src/router/index.js"
 git commit -m "added function $fName"
 git push
